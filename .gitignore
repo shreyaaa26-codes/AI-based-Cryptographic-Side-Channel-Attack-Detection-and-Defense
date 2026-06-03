@@ -1,0 +1,4 @@
+*.h5
+*.npy
+*.pth
+__pycache__/
