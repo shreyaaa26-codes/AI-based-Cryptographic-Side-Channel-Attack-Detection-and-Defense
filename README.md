@@ -1,17 +1,44 @@
-🔐 AI-Based Cryptographic Side-Channel Attack Detection and Defense
-📌 Overview
+# 🔐 AI-Based Cryptographic Side-Channel Attack Detection and Defense
 
-This project presents an AI-driven framework for detecting and analyzing cryptographic side-channel leakages using machine learning and deep learning techniques. The system leverages the ASCAD (ANSSI Side-Channel Analysis Database) dataset to identify information leakage patterns from power consumption traces and provides automated defense recommendations to enhance cryptographic security.
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Random%20Forest-green)
+![Deep Learning](https://img.shields.io/badge/Deep%20Learning-CNN-orange)
+![Cybersecurity](https://img.shields.io/badge/Cybersecurity-Side%20Channel%20Analysis-red)
+![Research Project](https://img.shields.io/badge/Status-Research%20Project-success)
 
-The project combines traditional machine learning models with deep learning approaches to improve leakage detection accuracy and severity assessment.
+---
 
-🎯 Objectives
-Detect cryptographic side-channel vulnerabilities from power traces.
-Classify leakage patterns using Machine Learning and Deep Learning models.
-Analyze leakage severity levels.
-Generate automated defense recommendations.
-Improve security assessment of cryptographic implementations.
-🏗️ System Architecture
+## 📌 Overview
+
+This project presents an AI-driven framework for detecting and analyzing cryptographic side-channel leakages using Machine Learning and Deep Learning techniques.
+
+The system leverages the ASCAD (ANSSI Side-Channel Analysis Database) dataset to identify information leakage patterns from power consumption traces and provides automated defense recommendations to enhance cryptographic security.
+
+The framework combines:
+
+- Statistical Leakage Analysis
+- Feature Engineering
+- Random Forest Classification
+- CNN-Based Leakage Detection
+- Leakage Severity Scoring
+- Explainable AI Techniques
+- Automated Defense Recommendation Engine
+
+---
+
+## 🎯 Objectives
+
+- Detect cryptographic side-channel vulnerabilities from power traces.
+- Classify leakage patterns using Machine Learning and Deep Learning models.
+- Analyze leakage severity levels.
+- Generate automated defense recommendations.
+- Improve security assessment of cryptographic implementations.
+
+---
+
+## 🏗️ System Architecture
+
+```text
 ASCAD Dataset
       │
       ▼
@@ -20,16 +47,117 @@ Data Preprocessing
       ▼
 Feature Extraction
       │
-      ├─────────────► Random Forest Classifier
+      ├──► Random Forest Classifier
       │
-      └─────────────► CNN-Based Leakage Detection
-                           │
-                           ▼
-                 Leakage Severity Analysis
-                           │
-                           ▼
-                Defense Recommendation Engine
-📂 Project Structure
+      └──► CNN-Based Leakage Detection
+                   │
+                   ▼
+         Leakage Severity Analysis
+                   │
+                   ▼
+      Defense Recommendation Engine
+```
+
+---
+
+## 🚀 Key Features
+
+### 🤖 AI-Powered Leakage Detection
+Automatically detects vulnerable cryptographic traces.
+
+### 📍 Leakage Localization
+Identifies leakage-prone regions in power traces using statistical variance analysis.
+
+### 🧠 Hybrid ML + Deep Learning Pipeline
+Combines:
+- Random Forest (Interpretable Baseline)
+- CNN (Deep Learning Detection)
+
+### ⚠ Leakage Severity Scoring
+Assigns risk levels:
+- Low
+- Medium
+- High
+
+### 🔎 Explainable AI
+Uses CNN saliency maps to highlight:
+- Sensitive execution regions
+- Important time samples
+- Leakage-driving signal patterns
+
+### 🛡️ Defense Recommendation Engine
+Maps leakage severity to practical cryptographic countermeasures.
+
+---
+
+## 📊 Dataset
+
+### ASCAD (AES Side-Channel Analysis Database)
+
+Dataset Characteristics:
+
+- 50,000 AES Power Traces
+- Real Hardware Leakage Measurements
+- AES Encryption Operations
+- Side-Channel Leakage Labels
+- Benchmark Dataset for Security Research
+
+> Dataset files are not included in this repository due to size and licensing constraints.
+
+---
+
+## 🔬 Methodology
+
+### 1. Leakage Localization
+Variance-based statistical analysis is performed across aligned traces to identify leakage-prone regions.
+
+### 2. Feature Extraction
+Statistical descriptors are extracted, including:
+- Energy
+- Variance
+- Signal Statistics
+- Leakage Indicators
+
+### 3. Random Forest Classifier
+Provides:
+- Fast Detection
+- Feature Importance Analysis
+- Interpretable Baseline Performance
+
+### 4. CNN-Based Leakage Detection
+A 1D Convolutional Neural Network learns:
+- Leakage Signatures
+- Sensitive Execution Patterns
+- Complex Non-Linear Leakage Behavior
+
+### 5. Leakage Severity Scoring
+
+| Severity | Recommended Action |
+|----------|-------------------|
+| Low | Continue Monitoring |
+| Medium | Noise Injection / Hiding |
+| High | Masking / Randomization |
+
+### 6. Explainable AI
+Saliency maps visualize:
+- Important Trace Segments
+- Leakage-Prone Regions
+- Model Decision Factors
+
+---
+
+## 📈 Results
+
+| Model | Accuracy | Precision | Recall | F1 Score |
+|---------|----------|----------|--------|---------|
+| Logistic Regression | 84.2% | 83.7% | 84.0% | 83.8% |
+| CNN (Raw Traces) | **96.6%** | **96.4%** | **96.7%** | **96.5%** |
+
+---
+
+## 📂 Project Structure
+
+```text
 AI-based-Cryptographic-Side-Channel-Attack-Detection-and-Defense/
 │
 ├── scripts/
@@ -41,139 +169,111 @@ AI-based-Cryptographic-Side-Channel-Attack-Detection-and-Defense/
 │   └── defense_recommendation.py
 │
 ├── data/
-│   └── ASCAD Dataset Files
 │
 ├── README.md
 └── requirements.txt
-🛠️ Technologies Used
-Programming Language
-Python 3.x
-Libraries & Frameworks
-NumPy
-Pandas
-Scikit-Learn
-PyTorch
-Matplotlib
-H5Py
-Dataset
-ASCAD (ANSSI Side-Channel Analysis Database)
-🔬 Methodology
-1. Data Preprocessing
-Loading ASCAD traces
-Trace normalization
-Window extraction
-Feature preparation
-2. Feature Engineering
-Statistical feature extraction
-Leakage-focused feature selection
-Random Forest feature importance analysis
-3. Machine Learning Baseline
+```
 
-A Random Forest classifier is trained to establish baseline leakage detection performance.
+---
 
-4. Deep Learning Model
+## 🛠️ Technologies Used
 
-A Convolutional Neural Network (CNN) is implemented to automatically learn leakage patterns from side-channel traces.
+### Programming Language
+- Python
 
-5. Leakage Severity Assessment
+### Machine Learning
+- Scikit-Learn
+- Random Forest
+- Logistic Regression
 
-Predicted leakages are categorized into severity levels to quantify security risk.
+### Deep Learning
+- PyTorch
+- Convolutional Neural Networks (CNN)
 
-6. Defense Recommendation Engine
+### Data Processing
+- NumPy
+- Pandas
+- H5Py
 
-Based on detected leakage severity, the framework generates security recommendations such as:
+### Visualization
+- Matplotlib
 
-Masking techniques
-Hiding countermeasures
-Noise injection
-Secure hardware implementation practices
-🚀 Key Features
+---
 
-✅ Automated side-channel leakage detection
+## ⚙️ Installation
 
-✅ Random Forest baseline model
-
-✅ CNN-based deep learning detection
-
-✅ Leakage severity classification
-
-✅ Explainable leakage analysis
-
-✅ Automated defense recommendations
-
-✅ Scalable framework for cryptographic security assessment
-
-📊 Results
-
-The framework evaluates model performance using:
-
-Accuracy
-Precision
-Recall
-F1-Score
-Confusion Matrix
-
-Example:
-
-Metric	Score
-Accuracy	XX%
-Precision	XX%
-Recall	XX%
-F1 Score	XX%
-
-Replace the values above with your experimental results.
-
-📈 Future Enhancements
-Real-time side-channel attack monitoring
-Transformer-based leakage detection models
-Federated learning for secure collaborative analysis
-Support for multiple cryptographic algorithms
-Explainable AI (XAI) integration for leakage interpretation
-📚 Dataset Information
-
-This project utilizes the ASCAD dataset developed by ANSSI for side-channel analysis research.
-
-Due to dataset licensing and repository size limitations, dataset files are not distributed within this repository.
-
-💻 Installation
-
-Clone the repository:
-
+```bash
 git clone https://github.com/shreyaaa26-codes/AI-based-Cryptographic-Side-Channel-Attack-Detection-and-Defense.git
-
-Navigate to the project directory:
 
 cd AI-based-Cryptographic-Side-Channel-Attack-Detection-and-Defense
 
-Install dependencies:
-
 pip install -r requirements.txt
-▶️ Usage
+```
 
-Train the Random Forest model:
+---
 
+## ▶️ Usage
+
+Train Random Forest:
+
+```bash
 python scripts/train_rf_baseline.py
+```
 
-Train the CNN model:
+Train CNN:
 
+```bash
 python scripts/train_cnn_pytorch.py
+```
 
-Perform leakage severity analysis:
+Run Leakage Severity Analysis:
 
+```bash
 python scripts/leakage_severity.py
+```
 
-Generate defense recommendations:
+Generate Defense Recommendations:
 
+```bash
 python scripts/defense_recommendation.py
-👩‍💻 Author
+```
 
-Shreya
+---
 
-Cybersecurity | Artificial Intelligence | Machine Learning | Cryptographic Security Research
+## 🔮 Future Enhancements
 
-⭐ Repository Highlights
-AI-Powered Side-Channel Attack Detection
-Cryptographic Security Analysis
-Machine Learning & Deep Learning Integration
-Research-Oriented Cybersecurity Project
-Resume and Publication Ready
+- Real-Time Leakage Monitoring
+- Streamlit-Based Dashboard
+- Live Risk Visualization
+- RSA/ECC Side-Channel Support
+- Transformer-Based Leakage Detection
+- Hardware Security Validation Integration
+
+---
+
+## 🏅 Research Presentation
+
+Presented at:
+
+**ISCADS 2026 – Indian Symposium on Cybersecurity and Data Science**  
+Manipal Institute of Technology Bengaluru  
+Manipal Academy of Higher Education
+
+---
+
+## 👩‍💻 Authors
+
+- Shreya L
+- Dhruti Aravind
+- Nishanth Shet
+- MK Koushik Iyer
+
+---
+
+## ⭐ Project Highlights
+
+- AI-Powered Side-Channel Attack Detection
+- Cryptographic Security Assessment
+- Explainable AI Integration
+- Automated Defense Recommendation System
+- Research-Oriented Cybersecurity Project
